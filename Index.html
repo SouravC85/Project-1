@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Travelogue</title>
+</head>
+<body>
+  <!-- nav-->
+  <nav class= "navbar">
+      <div class= "nav-center">
+          <div class="nav-header">
+              <a href="index.html" class="nav-logo">
+                  <img src="./assets/logo.png"/>
+              </a>
+              <button class="nav-button btn">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          <div class="nav-links">
+              <a href="index.html" class="nav-link"> Home</a>
+              <a href="about.html" target="_blank" class="nav-link"> About</a>
+              <div class="nav-link-contact">
+                <a href="contact.html" target="_blank" class="nav-link"> Contact</a>
+              </div>
+          </div>
+      </div>
+  </nav>
+  <!--end of nav-->
+  <script >
+      const getElement=(selector) => {
+    const element =document.querySelector(selector);
+    
+    if(element)
+        return element;
+    throw Error(`there is no ${selector} class`);
+}
+
+const links=getElement('.nav-links');
+const navButtonDOM = getElement('.nav-button');
+
+navButtonDOM.addEventListener('click',()=>{
+    links.classList.toggle('show-links');
+});
+  </script>
+  
+</body>
+</html>
